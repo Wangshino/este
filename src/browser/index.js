@@ -4,8 +4,9 @@
 import 'regenerator-runtime/runtime';
 import { loadLocale } from './intl';
 
-const currentLocale = document.documentElement
+const locale = document.documentElement
   ? document.documentElement.lang
   : 'en';
 
-loadLocale(currentLocale).then(() => require('./main'));
+loadLocale(locale).then(messages =>
+  require('./main').default(locale, messages));

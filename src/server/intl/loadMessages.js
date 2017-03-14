@@ -1,15 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 
-const descriptorsToMessages = descriptors =>
-  descriptors.reduce(
-    (previous, { defaultMessage, id }) => ({
-      ...previous,
-      [id]: defaultMessage,
-    }),
-    {},
-  );
-
 const loadMessages = options => {
   const {
     includeDefault = false,
@@ -27,7 +18,7 @@ const loadMessages = options => {
     .reduce(
       (previous, { descriptors, locale }) => ({
         ...previous,
-        [locale]: descriptorsToMessages(descriptors),
+        [locale]: descriptors,
       }),
       {},
     );

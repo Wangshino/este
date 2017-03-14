@@ -3,8 +3,7 @@ import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
   'auth/email-already-in-use': {
-    defaultMessage: `The new user account cannot be created because the
-      specified email address is already in use.`,
+    defaultMessage: 'The new user account cannot be created because the specified email address is already in use.',
     id: 'firebase.error.EMAIL_TAKEN',
   },
   'auth/invalid-email': {

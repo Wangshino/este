@@ -1,211 +1,164 @@
-/* eslint-disable max-len, quote-props, quotes */
-export default [
-  {
-    "id": "app.buttons.add",
-    "defaultMessage": "Adicionar",
-  },
-  {
-    "id": "app.buttons.cancel",
-    "defaultMessage": "Cancelar",
-  },
-  {
-    "id": "app.buttons.delete",
-    "defaultMessage": "Excluir",
-  },
-  {
-    "id": "app.buttons.dismiss",
-    "defaultMessage": "Demitir",
-  },
-  {
-    "id": "app.buttons.edit",
-    "defaultMessage": "Editar",
-  },
-  {
-    "id": "app.buttons.save",
-    "defaultMessage": "Salvar",
-  },
-  {
-    "id": "app.buttons.signIn",
-    "defaultMessage": "Usuário",
-  },
-  {
-    "id": "app.buttons.signIn",
-    "defaultMessage": "Usuário",
-  },
-  {
-    "id": "app.buttons.signOut",
-    "defaultMessage": "Sair",
-  },
-  {
-    "id": "app.buttons.signUp",
-    "defaultMessage": "Inscrever-se",
-  },
-  {
-    "id": "app.buttons.submit",
-    "defaultMessage": "Enviar",
-  },
-  {
-    "id": "app.confirm.areYouSure",
-    "defaultMessage": "Você tem certeza?",
-  },
-  {
-    "id": "app.confirm.unsavedChanges",
-    "defaultMessage": "Você tem alterações não salvas. Você tem certeza?",
-  },
-  {
-    "id": "app.links.fields",
-    "defaultMessage": "Campos",
-  },
-  {
-    "id": "app.links.home",
-    "defaultMessage": "Início",
-  },
-  {
-    "id": "app.links.intl",
-    "defaultMessage": "Idioma",
-  },
-  {
-    "id": "app.links.me",
-    "defaultMessage": "Eu",
-  },
-  {
-    "id": "app.links.notFound",
-    "defaultMessage": "Página não encontrada",
-  },
-  {
-    "id": "app.links.offline",
-    "defaultMessage": "Off-line",
-  },
-  {
-    "id": "app.links.profile",
-    "defaultMessage": "Perfil",
-  },
-  {
-    "id": "app.links.settings",
-    "defaultMessage": "Configurações",
-  },
-  {
-    "id": "app.links.signIn",
-    "defaultMessage": "Usuário",
-  },
-  {
-    "id": "app.links.todos",
-    "defaultMessage": "Tarefas",
-  },
-  {
-    "id": "app.links.users",
-    "defaultMessage": "Usuários",
-  },
-  {
-    "id": "auth.email.emailLegend",
-    "defaultMessage": "Email",
-  },
-  {
-    "id": "auth.email.emailPlaceholder",
-    "defaultMessage": "endereço@email.com",
-  },
-  {
-    "id": "auth.email.passwordForgotten",
-    "defaultMessage": "Esqueceu sua senha?",
-  },
-  {
-    "id": "auth.email.passwordPlaceholder",
-    "defaultMessage": "senha",
-  },
-  {
-    "id": "auth.email.passwordRecoveryLegend",
-    "defaultMessage": "Email para recuperação de senha.",
-  },
-  {
-    "id": "auth.email.recoveryEmailSent",
-    "defaultMessage": "Email de recuperação foi enviado.",
-  },
-  {
-    "id": "auth.email.resetPassword",
-    "defaultMessage": "Restaurar Senha",
-  },
-  {
-    "id": "auth.signInError.email",
-    "defaultMessage": "Email inválido.",
-  },
-  {
-    "id": "auth.signInError.required",
-    "defaultMessage": "Favor preencher {prop, select, email {endereço de email} password {senha}}.",
-  },
-  {
-    "id": "auth.signInError.simplePassword",
-    "defaultMessage": "Senha precisa conter {minLength} caracteres.",
-  },
-  {
-    "id": "auth.social.facebookSignIn",
-    "defaultMessage": "Login do Facebook",
-  },
-  {
-    "id": "firebase.error.EMAIL_TAKEN",
-    "defaultMessage": "Novo usuário não pode ser criado, o email informado já foi utilizado.",
-  },
-  {
-    "id": "firebase.error.INVALID_EMAIL",
-    "defaultMessage": "Email informado não é válido.",
-  },
-  {
-    "id": "firebase.error.INVALID_PASSWORD",
-    "defaultMessage": "A senha do usuário específico está incorreta.",
-  },
-  {
-    "id": "firebase.error.INVALID_USER",
-    "defaultMessage": "Usuário especificado não existe.",
-  },
-  {
-    "id": "footer.madeByHtml",
-    "defaultMessage": "desenvolvido por",
-  },
-  {
-    "id": "intl.page.unreadCount",
-    "defaultMessage": "{unreadCount, plural, one {mensagem} other {mensagens}}",
-  },
-  {
-    "id": "loading.loadingText",
-    "defaultMessage": "Carregando",
-  },
-  {
-    "id": "loading.longLoadingText",
-    "defaultMessage": "Ainda a carregar, por favor, verifique sua conexão",
-  },
-  {
-    "id": "notFound.continue",
-    "defaultMessage": "Por favor, continue aqui.",
-  },
-  {
-    "id": "notFound.h1",
-    "defaultMessage": "A página não está disponível",
-  },
-  {
-    "id": "notFound.p",
-    "defaultMessage": "O link está indisponível ou a página foi removida.",
-  },
-  {
-    "id": "todos.buttons.add100",
-    "defaultMessage": "Adicionar 100 Tarefas",
-  },
-  {
-    "id": "todos.buttons.clearAll",
-    "defaultMessage": "Apagar Tudo",
-  },
-  {
-    "id": "todos.buttons.clearCompleted",
-    "defaultMessage": "Limpeza Completa",
-  },
-  {
-    "id": "todos.leftTodos",
-    "defaultMessage": "{leftTodos, plural, =0 {Não tarefas pendentes, apreciar :-)} one {Você tem {leftTodos} tarefa} other {Você tem {leftTodos} tarefas}}",
-  },
-  {
-    "id": "todos.newTodo.placeholder",
-    "defaultMessage": "O que precisa ser feito?",
-  },
-  {
-    "id": "todos.todos.empty",
-    "defaultMessage": "Vazio...",
-  },
-];
+/* eslint-disable max-len, quote-props, quotes, comma-dangle */
+export default {
+  "app.buttons.add":
+    "Add",
+
+  "app.buttons.cancel":
+    "Cancel",
+
+  "app.buttons.delete":
+    "Delete",
+
+  "app.buttons.dismiss":
+    "Dismiss",
+
+  "app.buttons.edit":
+    "Edit",
+
+  "app.buttons.save":
+    "Save",
+
+  "app.buttons.signIn":
+    "Sign In",
+
+  "app.buttons.signOut":
+    "Sign Out",
+
+  "app.buttons.signUp":
+    "Sign Up",
+
+  "app.buttons.submit":
+    "Submit",
+
+  "app.confirm.areYouSure":
+    "Are you sure?",
+
+  "app.confirm.unsavedChanges":
+    "You have unsaved changes. Are you sure?",
+
+  "app.links.fields":
+    "Fields",
+
+  "app.links.home":
+    "Home",
+
+  "app.links.intl":
+    "Intl",
+
+  "app.links.me":
+    "Me",
+
+  "app.links.notFound":
+    "Page Not Found",
+
+  "app.links.offline":
+    "Offline",
+
+  "app.links.profile":
+    "Profile",
+
+  "app.links.settings":
+    "Settings",
+
+  "app.links.signIn":
+    "Sign in",
+
+  "app.links.todos":
+    "Todos",
+
+  "app.links.users":
+    "Users",
+
+  "auth.email.emailLegend":
+    "Email",
+
+  "auth.email.emailPlaceholder":
+    "your@email.com",
+
+  "auth.email.passwordForgotten":
+    "Forgot Your Password?",
+
+  "auth.email.passwordPlaceholder":
+    "password",
+
+  "auth.email.passwordRecoveryLegend":
+    "Password Recovery",
+
+  "auth.email.recoveryEmailSent":
+    "Recovery email has been sent.",
+
+  "auth.email.resetPassword":
+    "Reset Password",
+
+  "auth.signInError.email":
+    "Email address is not valid.",
+
+  "auth.signInError.required":
+    "Please fill out {prop, select, email {email} password {password}}.",
+
+  "auth.signInError.simplePassword":
+    "Password must contain at least {minLength} characters.",
+
+  "auth.social.facebookSignIn":
+    "Login with Facebook",
+
+  "firebase.error.auth/network-request-failed":
+    "No internet connection.",
+
+  "firebase.error.auth/too-many-requests":
+    "Too many requests. Try it later, please.",
+
+  "firebase.error.auth/user-token-expired":
+    "Your credential has expired. Please sign in.",
+
+  "firebase.error.EMAIL_TAKEN":
+    "The new user account cannot be created because the specified email address is already in use.",
+
+  "firebase.error.INVALID_EMAIL":
+    "The specified email is not a valid email.",
+
+  "firebase.error.INVALID_PASSWORD":
+    "The specified user account password is incorrect.",
+
+  "firebase.error.INVALID_USER":
+    "The specified user account does not exist.",
+
+  "footer.madeByHtml":
+    "Made with love by",
+
+  "intl.page.unreadCount":
+    "{unreadCount, plural, one {message} other {messages}}",
+
+  "loading.loadingText":
+    "Loading",
+
+  "loading.longLoadingText":
+    "Still loading, please check your connection",
+
+  "notFound.continue":
+    "Continue here please.",
+
+  "notFound.h1":
+    "This page isn't available",
+
+  "notFound.p":
+    "The link may be broken, or the page may have been removed.",
+
+  "todos.buttons.add100":
+    "Add 100 Todos",
+
+  "todos.buttons.clearAll":
+    "Clear All",
+
+  "todos.buttons.clearCompleted":
+    "Clear Completed",
+
+  "todos.leftTodos":
+    "{leftTodos, plural, =0 {Nothing, enjoy :-)} one {You have {leftTodos} task} other {You have {leftTodos} tasks}}",
+
+  "todos.newTodo.placeholder":
+    "What needs to be done?",
+
+  "todos.todos.empty":
+    "It's rather empty here..."
+};

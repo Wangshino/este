@@ -1,15 +1,15 @@
 // @flow
-import BaseRoot from '../../browser/app/BaseRoot';
-import Helmet from 'react-helmet';
-import Html from './Html';
 import React from 'react';
+import Helmet from 'react-helmet';
+import serialize from 'serialize-javascript';
+import Html from './Html';
+import BaseRoot from '../../browser/app/BaseRoot';
 import Root, { createRouterRender } from '../../browser/app/Root';
 import config from '../config';
 import configureFela from '../../browser/configureFela';
 import configureFound from '../../browser/configureFound';
 import configureStore from '../../common/configureStore';
-import createInitialState from './createInitialState';
-import serialize from 'serialize-javascript';
+import { createInitialState, messages } from './createInitialState';
 import { RedirectException } from 'found';
 import { RouterProvider } from 'found/lib/server';
 import { ServerProtocol } from 'farce';
@@ -36,8 +36,9 @@ const getLocale = req =>
       || req.acceptsLanguages(config.locales) // Browser specified language
       || config.defaultLocale; // No preference, use default locale
 
-const createStore = (found, req): Object =>
-  configureStore({
+const createStore = (found, req): Object => {
+  const locale = getLocale(req);
+  return configureStore({
     initialState: {
       ...initialState,
       app: {
@@ -49,13 +50,15 @@ const createStore = (found, req): Object =>
       },
       intl: {
         ...initialState.intl,
-        currentLocale: getLocale(req),
+        currentLocale: locale,
         initialNow: Date.now(),
+        messages: { [locale]: messages[locale] },
       },
     },
     platformReducers: { found: found.reducer },
     platformStoreEnhancers: found.storeEnhancers,
   });
+};
 
 const renderBody = (renderArgs, store, userAgent) => {
   const felaRenderer = configureFela(userAgent);
@@ -91,6 +94,10 @@ const renderHtml = (state, body) => {
   if (!config.isProduction) {
     global.webpackIsomorphicTools.refresh();
   }
+
+  // TODO: this works but it should be... less hacky (ramda)
+  state.intl.messages = {};
+
   const scripts = renderScripts(state, appJsFilename);
   const html = renderToStaticMarkup(
     <Html

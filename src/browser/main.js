@@ -25,14 +25,6 @@ const reportingMiddleware = configureReporting({
 // medium.com/@taion/react-routing-and-data-fetching-ec519428135c
 const found = configureFound(Root.routeConfig);
 
-const store = configureStore({
-  initialState,
-  platformDeps: { uuid },
-  platformReducers: { found: found.reducer },
-  platformMiddleware: [reportingMiddleware],
-  platformStoreEnhancers: found.storeEnhancers,
-});
-
 const appElement = document.getElementById('app');
 
 const cookiePaths = [
@@ -77,40 +69,55 @@ cookiePaths.forEach(([feature, props]) => {
 // 2. initial render (before rehydrate, to match client and server render)
 // 3. rehydrate local app state
 // 4. dispatch APP_STARTED
-found.getRenderArgs(store, renderArgs => {
-  const onRehydrate = () => {
-    // Don't import appStarted action creator since it would break hot reload.
-    store.dispatch(({ type: 'este/app/STARTED' }: Action));
+const main = (locale: string, messages: Object) => {
+  // Inject messages from intl chunk into store
+  initialState.intl.messages[locale] = messages;
 
-    // gist.github.com/gaearon/06bd9e2223556cb0d841#file-naive-js
-    if (!module.hot || typeof module.hot.accept !== 'function') return;
-    module.hot.accept('./app/Root', () => {
-      const NextRoot = require('./app/Root').default;
+  const store = configureStore({
+    initialState,
+    platformDeps: { uuid },
+    platformReducers: { found: found.reducer },
+    platformMiddleware: [reportingMiddleware],
+    platformStoreEnhancers: found.storeEnhancers,
+  });
 
-      found.replaceRouteConfig(NextRoot.routeConfig);
-      found.getRenderArgs(store, renderArgs => {
-        ReactDOM.render(
-          <NextRoot renderArgs={renderArgs} store={store} />,
-          appElement,
-        );
+  found.getRenderArgs(store, renderArgs => {
+    const onRehydrate = () => {
+      // Don't import appStarted action creator since it would break hot reload.
+      store.dispatch(({ type: 'este/app/STARTED' }: Action));
+
+      // gist.github.com/gaearon/06bd9e2223556cb0d841#file-naive-js
+      if (!module.hot || typeof module.hot.accept !== 'function') return;
+      module.hot.accept('./app/Root', () => {
+        const NextRoot = require('./app/Root').default;
+
+        found.replaceRouteConfig(NextRoot.routeConfig);
+        found.getRenderArgs(store, renderArgs => {
+          ReactDOM.render(
+            <NextRoot renderArgs={renderArgs} store={store} />,
+            appElement,
+          );
+        });
       });
-    });
-  };
+    };
 
-  const afterInitialRender = () => {
-    persistStore(
-      store,
-      {
-        ...configureStorage(initialState.config.appName, transforms),
-        storage: localforage,
-      },
-      onRehydrate,
+    const afterInitialRender = () => {
+      persistStore(
+        store,
+        {
+          ...configureStorage(initialState.config.appName, transforms),
+          storage: localforage,
+        },
+        onRehydrate,
+      );
+    };
+
+    ReactDOM.render(
+      <Root renderArgs={renderArgs} store={store} />,
+      appElement,
+      afterInitialRender,
     );
-  };
+  });
+};
 
-  ReactDOM.render(
-    <Root renderArgs={renderArgs} store={store} />,
-    appElement,
-    afterInitialRender,
-  );
-});
+export default main;

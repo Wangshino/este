@@ -1,211 +1,164 @@
-/* eslint-disable max-len, quote-props, quotes */
-export default [
-  {
-    "id": "app.buttons.add",
-    "defaultMessage": "Přidat",
-  },
-  {
-    "id": "app.buttons.cancel",
-    "defaultMessage": "Zrušit",
-  },
-  {
-    "id": "app.buttons.delete",
-    "defaultMessage": "Smazat",
-  },
-  {
-    "id": "app.buttons.dismiss",
-    "defaultMessage": "Zrušit",
-  },
-  {
-    "id": "app.buttons.edit",
-    "defaultMessage": "Editovat",
-  },
-  {
-    "id": "app.buttons.save",
-    "defaultMessage": "Uložit",
-  },
-  {
-    "id": "app.buttons.signIn",
-    "defaultMessage": "Přihlášení",
-  },
-  {
-    "id": "app.buttons.signIn",
-    "defaultMessage": "Přihlášení",
-  },
-  {
-    "id": "app.buttons.signOut",
-    "defaultMessage": "Odhlásit se",
-  },
-  {
-    "id": "app.buttons.signUp",
-    "defaultMessage": "Registrace",
-  },
-  {
-    "id": "app.buttons.submit",
-    "defaultMessage": "Odeslat",
-  },
-  {
-    "id": "app.confirm.areYouSure",
-    "defaultMessage": "Jste si jistý?",
-  },
-  {
-    "id": "app.confirm.unsavedChanges",
-    "defaultMessage": "Máte neuložené změny. Jste si jistý?",
-  },
-  {
-    "id": "app.links.fields",
-    "defaultMessage": "Fields",
-  },
-  {
-    "id": "app.links.home",
-    "defaultMessage": "Úvod",
-  },
-  {
-    "id": "app.links.intl",
-    "defaultMessage": "Lokalizace",
-  },
-  {
-    "id": "app.links.me",
-    "defaultMessage": "Já",
-  },
-  {
-    "id": "app.links.notFound",
-    "defaultMessage": "Stránka nenalezena",
-  },
-  {
-    "id": "app.links.offline",
-    "defaultMessage": "Offline",
-  },
-  {
-    "id": "app.links.profile",
-    "defaultMessage": "Profil",
-  },
-  {
-    "id": "app.links.settings",
-    "defaultMessage": "Nastavení",
-  },
-  {
-    "id": "app.links.signIn",
-    "defaultMessage": "Přihlášení",
-  },
-  {
-    "id": "app.links.todos",
-    "defaultMessage": "Úkoly",
-  },
-  {
-    "id": "app.links.users",
-    "defaultMessage": "Uživatelé",
-  },
-  {
-    "id": "auth.email.emailLegend",
-    "defaultMessage": "Email",
-  },
-  {
-    "id": "auth.email.emailPlaceholder",
-    "defaultMessage": "tvuj@email.com",
-  },
-  {
-    "id": "auth.email.passwordForgotten",
-    "defaultMessage": "Zapomenuté heslo",
-  },
-  {
-    "id": "auth.email.passwordPlaceholder",
-    "defaultMessage": "heslo",
-  },
-  {
-    "id": "auth.email.passwordRecoveryLegend",
-    "defaultMessage": "Obnovení hesla",
-  },
-  {
-    "id": "auth.email.recoveryEmailSent",
-    "defaultMessage": "Email pro obnovení hesla odeslán.",
-  },
-  {
-    "id": "auth.email.resetPassword",
-    "defaultMessage": "Reset hesla",
-  },
-  {
-    "id": "auth.signInError.email",
-    "defaultMessage": "Emailová adresa není správná.",
-  },
-  {
-    "id": "auth.signInError.required",
-    "defaultMessage": "Prosím vyplňte {prop, select, email {email} password {heslo}}.",
-  },
-  {
-    "id": "auth.signInError.simplePassword",
-    "defaultMessage": "Heslo musí obsahovat alespoň {minLength} znaků.",
-  },
-  {
-    "id": "auth.social.facebookSignIn",
-    "defaultMessage": "Přihlášení přes Facebook",
-  },
-  {
-    "id": "firebase.error.EMAIL_TAKEN",
-    "defaultMessage": "Tento email je už obsazen.",
-  },
-  {
-    "id": "firebase.error.INVALID_EMAIL",
-    "defaultMessage": "Email není ve správném formátu.",
-  },
-  {
-    "id": "firebase.error.INVALID_PASSWORD",
-    "defaultMessage": "Nesprávné heslo.",
-  },
-  {
-    "id": "firebase.error.INVALID_USER",
-    "defaultMessage": "Nesprávný uživatel.",
-  },
-  {
-    "id": "footer.madeByHtml",
-    "defaultMessage": "stvořil",
-  },
-  {
-    "id": "intl.page.unreadCount",
-    "defaultMessage": "{unreadCount, plural, one {zpráva} other {zpráv}}",
-  },
-  {
-    "id": "loading.loadingText",
-    "defaultMessage": "Nahrávám",
-  },
-  {
-    "id": "loading.longLoadingText",
-    "defaultMessage": "Stále nahrávám...",
-  },
-  {
-    "id": "notFound.continue",
-    "defaultMessage": "Pokračujte zde prosím.",
-  },
-  {
-    "id": "notFound.h1",
-    "defaultMessage": "Tato stránka není dostupná",
-  },
-  {
-    "id": "notFound.p",
-    "defaultMessage": "Možná máte špatný odkaz, nebo byla stránka odstraněna.",
-  },
-  {
-    "id": "todos.buttons.add100",
-    "defaultMessage": "Přidat 100 úkolů",
-  },
-  {
-    "id": "todos.buttons.clearAll",
-    "defaultMessage": "Vymazat vše",
-  },
-  {
-    "id": "todos.buttons.clearCompleted",
-    "defaultMessage": "Vymazat hotové",
-  },
-  {
-    "id": "todos.leftTodos",
-    "defaultMessage": "{leftTodos, plural, =0 {Nic, užívej :-)} one {Máš {leftTodos} úkol} other {Máš {leftTodos} úkolů}}",
-  },
-  {
-    "id": "todos.newTodo.placeholder",
-    "defaultMessage": "Co je třeba udělat?",
-  },
-  {
-    "id": "todos.todos.empty",
-    "defaultMessage": "Nic tu není...",
-  },
-];
+/* eslint-disable max-len, quote-props, quotes, comma-dangle */
+export default {
+  "app.buttons.add":
+    "Add",
+
+  "app.buttons.cancel":
+    "Cancel",
+
+  "app.buttons.delete":
+    "Delete",
+
+  "app.buttons.dismiss":
+    "Dismiss",
+
+  "app.buttons.edit":
+    "Edit",
+
+  "app.buttons.save":
+    "Save",
+
+  "app.buttons.signIn":
+    "Sign In",
+
+  "app.buttons.signOut":
+    "Sign Out",
+
+  "app.buttons.signUp":
+    "Sign Up",
+
+  "app.buttons.submit":
+    "Submit",
+
+  "app.confirm.areYouSure":
+    "Are you sure?",
+
+  "app.confirm.unsavedChanges":
+    "You have unsaved changes. Are you sure?",
+
+  "app.links.fields":
+    "Fields",
+
+  "app.links.home":
+    "Home",
+
+  "app.links.intl":
+    "Intl",
+
+  "app.links.me":
+    "Me",
+
+  "app.links.notFound":
+    "Page Not Found",
+
+  "app.links.offline":
+    "Offline",
+
+  "app.links.profile":
+    "Profile",
+
+  "app.links.settings":
+    "Settings",
+
+  "app.links.signIn":
+    "Sign in",
+
+  "app.links.todos":
+    "Todos",
+
+  "app.links.users":
+    "Users",
+
+  "auth.email.emailLegend":
+    "Email",
+
+  "auth.email.emailPlaceholder":
+    "your@email.com",
+
+  "auth.email.passwordForgotten":
+    "Forgot Your Password?",
+
+  "auth.email.passwordPlaceholder":
+    "password",
+
+  "auth.email.passwordRecoveryLegend":
+    "Password Recovery",
+
+  "auth.email.recoveryEmailSent":
+    "Recovery email has been sent.",
+
+  "auth.email.resetPassword":
+    "Reset Password",
+
+  "auth.signInError.email":
+    "Email address is not valid.",
+
+  "auth.signInError.required":
+    "Please fill out {prop, select, email {email} password {password}}.",
+
+  "auth.signInError.simplePassword":
+    "Password must contain at least {minLength} characters.",
+
+  "auth.social.facebookSignIn":
+    "Login with Facebook",
+
+  "firebase.error.auth/network-request-failed":
+    "No internet connection.",
+
+  "firebase.error.auth/too-many-requests":
+    "Too many requests. Try it later, please.",
+
+  "firebase.error.auth/user-token-expired":
+    "Your credential has expired. Please sign in.",
+
+  "firebase.error.EMAIL_TAKEN":
+    "The new user account cannot be created because the specified email address is already in use.",
+
+  "firebase.error.INVALID_EMAIL":
+    "The specified email is not a valid email.",
+
+  "firebase.error.INVALID_PASSWORD":
+    "The specified user account password is incorrect.",
+
+  "firebase.error.INVALID_USER":
+    "The specified user account does not exist.",
+
+  "footer.madeByHtml":
+    "Made with love by",
+
+  "intl.page.unreadCount":
+    "{unreadCount, plural, one {message} other {messages}}",
+
+  "loading.loadingText":
+    "Loading",
+
+  "loading.longLoadingText":
+    "Still loading, please check your connection",
+
+  "notFound.continue":
+    "Continue here please.",
+
+  "notFound.h1":
+    "This page isn't available",
+
+  "notFound.p":
+    "The link may be broken, or the page may have been removed.",
+
+  "todos.buttons.add100":
+    "Add 100 Todos",
+
+  "todos.buttons.clearAll":
+    "Clear All",
+
+  "todos.buttons.clearCompleted":
+    "Clear Completed",
+
+  "todos.leftTodos":
+    "{leftTodos, plural, =0 {Nothing, enjoy :-)} one {You have {leftTodos} task} other {You have {leftTodos} tasks}}",
+
+  "todos.newTodo.placeholder":
+    "What needs to be done?",
+
+  "todos.todos.empty":
+    "It's rather empty here..."
+};

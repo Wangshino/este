@@ -19,9 +19,9 @@ export const setCurrentLocale = (locale: string): Action => ({
   payload: { locale },
 });
 
-export const applyCurrentLocale = (locale: string): Action => ({
+export const applyCurrentLocale = (locale: string, messages: Object): Action => ({
   type: SET_LOCALE,
-  payload: { locale },
+  payload: { locale, messages },
 });
 
 const applyLocale = (action$: any) =>
@@ -29,7 +29,7 @@ const applyLocale = (action$: any) =>
     .mergeMap(({ payload: { locale } }) =>
       // $FlowFixMe call of method `from` property `@@iterator` of $Iterable. Property not found in.
       Observable.from(loadLocale(locale))
-        .map(() => applyCurrentLocale(locale)));
+        .map(messages => applyCurrentLocale(locale, messages)));
 
 const reducer = (
   state: IntlState = initialState,
@@ -40,7 +40,14 @@ const reducer = (
 
   switch (action.type) {
     case SET_LOCALE: {
-      return { ...state, currentLocale: action.payload.locale };
+      const currentLocale = action.payload.locale;
+      return {
+        ...state,
+        currentLocale,
+        messages: {
+          [currentLocale]: action.payload.messages || {},
+        },
+      };
     }
 
     default:

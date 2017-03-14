@@ -112,7 +112,7 @@ export type Action =
   | { type: 'este/auth/SIGN_UP', payload: { providerName: string, options?: Object } }
   | { type: 'este/auth/SIGN_UP_DONE', payload: { user: ?User } }
   | { type: 'este/auth/SIGN_UP_FAIL', payload: { error: Error } }
-  | { type: 'este/intl/SET_LOCALE', payload: { locale: string } }
+  | { type: 'este/intl/SET_LOCALE', payload: { locale: string, messages?: Object } }
   | { type: 'este/intl/LOAD_LOCALE', payload: { locale: string } }
   | { type: 'este/todos/ADD_HUNDRED', payload: { todos: Array<Todo> } }
   | { type: 'este/todos/ADD', payload: { todo: Todo } }

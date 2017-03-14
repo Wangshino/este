@@ -9,7 +9,7 @@ import config from '../config';
 import configureFela from '../../browser/configureFela';
 import configureFound from '../../browser/configureFound';
 import configureStore from '../../common/configureStore';
-import { createInitialState, messages } from './createInitialState';
+import createInitialState from './createInitialState';
 import { RedirectException } from 'found';
 import { RouterProvider } from 'found/lib/server';
 import { ServerProtocol } from 'farce';
@@ -36,29 +36,25 @@ const getLocale = req =>
       || req.acceptsLanguages(config.locales) // Browser specified language
       || config.defaultLocale; // No preference, use default locale
 
-const createStore = (found, req): Object => {
-  const locale = getLocale(req);
-  return configureStore({
-    initialState: {
-      ...initialState,
-      app: {
-        currentTheme: getTheme(req),
-      },
-      device: {
-        ...initialState.device,
-        host: getHost(req),
-      },
-      intl: {
-        ...initialState.intl,
-        currentLocale: locale,
-        initialNow: Date.now(),
-        messages: { [locale]: messages[locale] },
-      },
+const createStore = (found, req): Object => configureStore({
+  initialState: {
+    ...initialState,
+    app: {
+      currentTheme: getTheme(req),
     },
-    platformReducers: { found: found.reducer },
-    platformStoreEnhancers: found.storeEnhancers,
-  });
-};
+    device: {
+      ...initialState.device,
+      host: getHost(req),
+    },
+    intl: {
+      ...initialState.intl,
+      currentLocale: getLocale(req),
+      initialNow: Date.now(),
+    },
+  },
+  platformReducers: { found: found.reducer },
+  platformStoreEnhancers: found.storeEnhancers,
+});
 
 const renderBody = (renderArgs, store, userAgent) => {
   const felaRenderer = configureFela(userAgent);
@@ -95,7 +91,8 @@ const renderHtml = (state, body) => {
     global.webpackIsomorphicTools.refresh();
   }
 
-  // TODO: this works but it should be... less hacky (ramda)
+  // Remove messages from state before sending to client
+  // client loads messages from the locale chunk
   state.intl.messages = {};
 
   const scripts = renderScripts(state, appJsFilename);

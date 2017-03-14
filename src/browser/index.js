@@ -2,7 +2,7 @@
 /* eslint-disable react/require-extension */
 
 import 'regenerator-runtime/runtime';
-import { loadLocale } from './intl';
+import { loadLocale } from './_intl';
 
 const locale = document.documentElement
   ? document.documentElement.lang

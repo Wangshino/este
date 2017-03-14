@@ -1,7 +1,7 @@
 // @flow
 import type { Action, IntlState } from '../types';
 import { Observable } from 'rxjs/Observable';
-import { loadLocale } from '../../browser/intl';
+import { loadLocale } from '../../browser/_intl';
 
 const LOAD_LOCALE = 'este/intl/LOAD_LOCALE';
 const SET_LOCALE = 'este/intl/SET_LOCALE';

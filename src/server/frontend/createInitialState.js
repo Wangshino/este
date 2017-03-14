@@ -5,9 +5,9 @@ import deviceReducer from '../../common/modules/device';
 import intlReducer from '../../common/modules/intl';
 import loadMessages from '../intl/loadMessages';
 
-export const messages = loadMessages();
+const messages = loadMessages();
 
-export const createInitialState = () => ({
+const createInitialState = () => ({
   config: {
     ...configReducer(),
     appName: config.appName,
@@ -21,7 +21,7 @@ export const createInitialState = () => ({
     currentLocale: config.defaultLocale,
     defaultLocale: config.defaultLocale,
     locales: config.locales,
-    messages: {},
+    messages,
   },
 });
 

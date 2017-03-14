@@ -3,7 +3,7 @@ import type { BoxProps } from './Box';
 import type { Theme } from '../themes/types';
 import Box from './Box';
 import React from 'react';
-import isReactNative from '../app/isReactNative';
+import isReactNative from '../lib/isReactNative';
 
 // TODO: Implement auto jsx-a11y/img-has-alt.
 

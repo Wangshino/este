@@ -1,10 +1,10 @@
 // @flow
 import type { State } from '../../common/types';
 import React from 'react';
-import buttonsMessages from '../../common/todos/buttonsMessages';
+import buttonsMessages from '../../common/messages/todos';
 import { Box, Button } from '../../common/components';
 import { FormattedMessage } from 'react-intl';
-import { addHundredTodos, clearAllTodos } from '../../common/todos/actions';
+import { addHundredTodos, clearAllTodos } from '../../common/modules/todos';
 import { compose, isEmpty } from 'ramda';
 import { connect } from 'react-redux';
 

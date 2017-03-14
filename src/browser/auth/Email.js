@@ -1,13 +1,13 @@
 // @flow
 import type { State } from '../../common/types';
 import React from 'react';
-import buttonsMessages from '../../common/app/buttonsMessages';
-import emailMessages from '../../common/auth/emailMessages';
+import buttonsMessages from '../../common/messages/buttons';
+import emailMessages from '../../common/messages/email';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { compose } from 'ramda';
 import { connect } from 'react-redux';
 import { fields } from '../../common/lib/redux-fields';
-import { resetPassword, signIn, signUp } from '../../common/auth/actions';
+import { resetPassword, signIn, signUp } from '../../common/modules/auth';
 import { Form, focus } from '../components';
 import {
   Box,

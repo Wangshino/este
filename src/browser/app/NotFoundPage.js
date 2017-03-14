@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
-import linksMessages from '../../common/app/linksMessages';
-import messages from '../../common/notfound/messages';
+import linksMessages from '../../common/messages/links';
+import messages from '../../common/messages/notFound';
 import { Box, PageHeader } from '../../common/components';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Link, Title } from '../components';

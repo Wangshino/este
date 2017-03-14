@@ -3,7 +3,7 @@ import React from 'react';
 import invariant from 'invariant';
 import { path as ramdaPath } from 'ramda';
 import { resetFields, setField } from './actions';
-import isReactNative from '../../app/isReactNative';
+import isReactNative from '../../lib/isReactNative';
 
 type Path = string | Array<string> | ((props: Object) => Array<string>);
 

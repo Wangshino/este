@@ -97,29 +97,29 @@ export type State = {
 // Actions
 
 export type Action =
-  | { type: 'APP_ERROR', payload: { error: Error } }
-  | { type: 'ADD_HUNDRED_TODOS', payload: { todos: Array<Todo> } }
-  | { type: 'ADD_TODO', payload: { todo: Todo } }
-  | { type: 'APP_ONLINE', payload: { online: boolean } }
-  | { type: 'APP_SHOW_MENU', payload: { menuShown: boolean } }
-  | { type: 'APP_STARTED' }
-  | { type: 'CLEAR_ALL_COMPLETED_TODOS' }
-  | { type: 'CLEAR_ALL_TODOS' }
-  | { type: 'DELETE_TODO', payload: { id: string } }
-  | { type: 'ON_AUTH', payload: { firebaseUser: ?Object } }
-  | { type: 'ON_USERS_PRESENCE', payload: { presence: Object } }
-  | { type: 'RESET_PASSWORD', payload: { email: string } }
-  | { type: 'SAVE_USER_DONE' }
-  | { type: 'SET_CURRENT_LOCALE', payload: { locale: string } }
-  | { type: 'LOAD_CURRENT_LOCALE', payload: { locale: string } }
-  | { type: 'SET_THEME', payload: { theme: string } }
-  | { type: 'SIGN_IN', payload: { providerName: string, options?: Object } }
-  | { type: 'SIGN_IN_DONE', payload: { user: ?User } }
-  | { type: 'SIGN_IN_FAIL', payload: { error: Error } }
-  | { type: 'SIGN_OUT' }
-  | { type: 'SIGN_UP', payload: { providerName: string, options?: Object } }
-  | { type: 'SIGN_UP_DONE', payload: { user: ?User } }
-  | { type: 'SIGN_UP_FAIL', payload: { error: Error } }
-  | { type: 'TOGGLE_TODO_COMPLETED', payload: { todo: Todo } }
-  | { type: 'TOGGLE_BASELINE' }
+  | { type: 'este/app/ERROR', payload: { error: Error } }
+  | { type: 'este/app/ONLINE', payload: { online: boolean } }
+  | { type: 'este/app/SET_THEME', payload: { theme: string } }
+  | { type: 'este/app/SHOW_MENU', payload: { menuShown: boolean } }
+  | { type: 'este/app/STARTED' }
+  | { type: 'este/app/TOGGLE_BASELINE' }
+  | { type: 'este/auth/ON_AUTH', payload: { firebaseUser: ?Object } }
+  | { type: 'este/auth/RESET_PASSWORD', payload: { email: string } }
+  | { type: 'este/auth/SIGN_IN', payload: { providerName: string, options?: Object } }
+  | { type: 'este/auth/SIGN_IN_DONE', payload: { user: ?User } }
+  | { type: 'este/auth/SIGN_IN_FAIL', payload: { error: Error } }
+  | { type: 'este/auth/SIGN_OUT' }
+  | { type: 'este/auth/SIGN_UP', payload: { providerName: string, options?: Object } }
+  | { type: 'este/auth/SIGN_UP_DONE', payload: { user: ?User } }
+  | { type: 'este/auth/SIGN_UP_FAIL', payload: { error: Error } }
+  | { type: 'este/intl/SET_LOCALE', payload: { locale: string } }
+  | { type: 'este/intl/LOAD_LOCALE', payload: { locale: string } }
+  | { type: 'este/todos/ADD_HUNDRED', payload: { todos: Array<Todo> } }
+  | { type: 'este/todos/ADD', payload: { todo: Todo } }
+  | { type: 'este/todos/CLEAR_COMPLETED' }
+  | { type: 'este/todos/CLEAR_ALL' }
+  | { type: 'este/todos/DELETE', payload: { id: string } }
+  | { type: 'este/todos/TOGGLE_COMPLETED', payload: { todo: Todo } }
+  | { type: 'este/users/ON_PRESENCE', payload: { presence: Object } }
+  | { type: 'este/users/SAVE_USER_DONE' }
   | { type: 'QUERY_FIREBASE', payload: { ref: string } };

@@ -4,7 +4,7 @@ import Email from './Email';
 import React from 'react';
 import SignInError from './SignInError';
 import Social from './Social';
-import linksMessages from '../../common/app/linksMessages';
+import linksMessages from '../../common/messages/links';
 import { Box, Loading, PageHeader } from '../../common/components';
 import { Title } from '../components';
 import { compose } from 'ramda';

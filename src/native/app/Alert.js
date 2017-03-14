@@ -1,7 +1,7 @@
 // @flow
 import type { State } from '../../common/types';
 import React from 'react';
-import errorToMessage from '../../common/app/errorToMessage';
+import errorToMessage from '../../common/lib/errorToMessage';
 import { Animated, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { Box, Text } from '../../common/components';
 import { compose } from 'ramda';

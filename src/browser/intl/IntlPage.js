@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import SwitchLocale from './SwitchLocale';
-import linksMessages from '../../common/app/linksMessages';
+import linksMessages from '../../common/messages/links';
 import { Box, PageHeader, Paragraph, Text } from '../../common/components';
 import {
   FormattedDate,

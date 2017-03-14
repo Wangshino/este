@@ -4,7 +4,7 @@ import type { Color, Theme } from '../themes/types';
 import Box from './Box';
 import React from 'react';
 import colorLib from 'color';
-import isReactNative from '../../common/app/isReactNative';
+import isReactNative from '../../common/lib/isReactNative';
 
 // Universal styled Text component. The same API for browsers and React Native.
 // Some props are ommited or limited or set to match React Native behaviour.

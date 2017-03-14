@@ -1,7 +1,7 @@
 // @flow
 import type { Color, Theme } from '../themes/types';
 import React from 'react';
-import isReactNative from '../../common/app/isReactNative';
+import isReactNative from '../../common/lib/isReactNative';
 
 // Universal styled Box component. The same API for browsers and React Native.
 // Some props are ommited or limited or set to match React Native behaviour.

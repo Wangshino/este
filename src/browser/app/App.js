@@ -6,8 +6,8 @@ import Footer from './Footer';
 import Header from './Header';
 import Helmet from 'react-helmet';
 import React from 'react';
-import common from '../../common/app/common';
-import favicon from '../../common/app/favicon';
+import common from '../../common';
+import manifest from '../../common/manifest';
 import { Baseline } from '../components';
 import { Box } from '../../common/components';
 import { compose } from 'ramda';
@@ -35,9 +35,9 @@ const App = (
           content: 'width=device-width, initial-scale=1, shrink-to-fit=no',
         },
         { 'http-equiv': 'x-ua-compatible', content: 'ie=edge' },
-        ...favicon.meta,
+        ...manifest.meta,
       ]}
-      link={[...favicon.link]}
+      link={[...manifest.link]}
     />
     <Container>
       <Header />

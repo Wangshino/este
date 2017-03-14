@@ -2,8 +2,8 @@
 import type { State, User } from '../../common/types';
 import React from 'react';
 import SignOut from '../auth/SignOut';
-import getUserPhotoUrl from '../../common/users/getUserPhotoUrl';
-import linksMessages from '../../common/app/linksMessages';
+import getUserPhotoUrl from '../../common/lib/getUserPhotoUrl';
+import linksMessages from '../../common/messages/links';
 import { Box, Image, Text } from '../../common/components';
 import { FormattedMessage } from 'react-intl';
 import { Link, Title } from '../components';

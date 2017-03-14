@@ -5,7 +5,7 @@ import OutlineButton from './OutlineButton';
 import React from 'react';
 import { compose } from 'ramda';
 import { connect } from 'react-redux';
-import { toggleBaseline } from '../app/actions';
+import { toggleBaseline } from '../modules/app';
 
 // Test vertical rhythm visually. Inspired by basehold.it
 

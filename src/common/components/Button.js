@@ -4,7 +4,7 @@ import type { TextProps } from './Text';
 import Box from './Box';
 import React from 'react';
 import Text, { computeTextStyle } from './Text';
-import isReactNative from '../../common/app/isReactNative';
+import isReactNative from '../../common/lib/isReactNative';
 
 export type ButtonProps = ColorProps & TextProps & {
   // For blindness accessibility features. Consider making it mandatory.

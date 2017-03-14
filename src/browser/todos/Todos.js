@@ -1,11 +1,11 @@
 // @flow
 import React from 'react';
-import todosMessages from '../../common/todos/todosMessages';
+import todosMessages from '../../common/messages/todos';
 import type { State, Todo } from '../../common/types';
 import { Box, Button, Text } from '../../common/components';
 import { compose, isEmpty, prop, reverse, sortBy, values } from 'ramda';
 import { connect } from 'react-redux';
-import { deleteTodo, toggleTodoCompleted } from '../../common/todos/actions';
+import { deleteTodo, toggleTodoCompleted } from '../../common/modules/todos';
 import { injectIntl } from 'react-intl';
 
 const TodosItem = (

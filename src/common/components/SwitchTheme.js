@@ -6,7 +6,7 @@ import React from 'react';
 import Text from './Text';
 import { compose } from 'ramda';
 import { connect } from 'react-redux';
-import { setTheme } from '../app/actions';
+import { setTheme } from '../modules/app';
 
 type SwitchThemeProps = {
   currentTheme: string,

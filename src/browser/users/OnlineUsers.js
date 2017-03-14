@@ -1,7 +1,7 @@
 // @flow
 import type { State, User } from '../../common/types';
 import React from 'react';
-import getUserPhotoUrl from '../../common/users/getUserPhotoUrl';
+import getUserPhotoUrl from '../../common/lib/getUserPhotoUrl';
 import { Box, Image, Text } from '../../common/components';
 import { connect } from 'react-redux';
 

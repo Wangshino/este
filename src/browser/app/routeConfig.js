@@ -4,7 +4,7 @@ import HttpError from 'found/lib/HttpError';
 import React from 'react';
 import queryFirebase from './queryFirebase';
 import { makeRouteConfig, Route } from 'found/lib/jsx';
-import { onUsersPresence } from '../../common/users/actions';
+import { onUsersPresence } from '../../common/modules/users';
 
 // Pages
 import App from './App';

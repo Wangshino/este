@@ -1,11 +1,11 @@
 // @flow
 import type { State } from '../../common/types';
 import React from 'react';
-import buttonsMessages from '../../common/app/buttonsMessages';
+import buttonsMessages from '../../common/messages/buttons';
 import { Box, Button } from '../../common/components';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { signIn } from '../../common/auth/actions';
+import { signIn } from '../../common/modules/auth';
 
 type SocialProps = { formDisabled: boolean, signIn: typeof signIn };
 

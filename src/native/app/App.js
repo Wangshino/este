@@ -5,12 +5,12 @@ import Menu from './Menu';
 import Page from './Page';
 import React from 'react';
 import SideMenu from 'react-native-side-menu';
-import common from '../../common/app/common';
+import common from '../../common';
 import { Baseline } from '../components';
 import { Box } from '../../common/components';
 import { Match, Redirect } from 'react-router';
 import { Platform, StatusBar } from 'react-native';
-import { appShowMenu } from '../../common/app/actions';
+import { appShowMenu } from '../../common/modules/app';
 import { compose } from 'ramda';
 import { connect } from 'react-redux';
 

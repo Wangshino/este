@@ -5,7 +5,7 @@ import { Box, Button, Text } from '../../common/components';
 import { FormattedDate, FormattedRelative } from 'react-intl';
 import { ScrollView } from 'react-native';
 import { connect } from 'react-redux';
-import { setCurrentLocale } from '../../common/intl/actions';
+import { setCurrentLocale } from '../../common/modules/intl';
 
 type IntlPageProps = {
   currentLocale: string,

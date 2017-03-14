@@ -2,7 +2,7 @@
 import type { State, User } from '../../common/types';
 import React from 'react';
 import SignOut from '../auth/SignOut';
-import getUserPhotoUrl from '../../common/users/getUserPhotoUrl';
+import getUserPhotoUrl from '../../common/lib/getUserPhotoUrl';
 import { Box, Text } from '../../common/components';
 import { Image } from 'react-native';
 import { Redirect } from 'react-router';

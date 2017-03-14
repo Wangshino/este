@@ -3,7 +3,7 @@ import Buttons from './Buttons';
 import NewTodo from './NewTodo';
 import React from 'react';
 import Todos from './Todos';
-import linksMessages from '../../common/app/linksMessages';
+import linksMessages from '../../common/messages/links';
 import { Box, PageHeader } from '../../common/components';
 import { FormattedMessage } from 'react-intl';
 import { Title } from '../components';

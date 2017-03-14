@@ -1,7 +1,7 @@
 // @flow
 import type { State, Todo } from '../../common/types';
 import React from 'react';
-import buttonsMessages from '../../common/todos/buttonsMessages';
+import buttonsMessages from '../../common/messages/todos';
 import { Box, Button } from '../../common/components';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
@@ -10,7 +10,7 @@ import {
   addHundredTodos,
   clearAllCompletedTodos,
   clearAllTodos,
-} from '../../common/todos/actions';
+} from '../../common/modules/todos';
 
 const allTodosAreCompleted = todos =>
   values(todos).filter(todo => todo.completed).length > 0;

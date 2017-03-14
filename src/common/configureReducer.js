@@ -1,17 +1,17 @@
 // @flow
 import type { Action, State } from './types';
-import app from './app/reducer';
-import auth from './auth/reducer';
-import config from './config/reducer';
-import device from './device/reducer';
-import intl from './intl/reducer';
-import todos from './todos/reducer';
-import users from './users/reducer';
+import app from './modules/app';
+import auth from './modules/auth';
+import config from './modules/config';
+import device from './modules/device';
+import intl from './modules/intl';
+import todos from './modules/todos';
+import users from './modules/users';
 import { combineReducers } from 'redux';
 import { fieldsReducer as fields } from './lib/redux-fields';
 
 // stackoverflow.com/q/35622588/233902
-const resetStateOnSignOutReducer = (reducer, initialState) =>
+const resetStateOnSignOutReducer = (reducer, initialState: State) =>
   (state: State, action: Action) => {
     const userWasSignedOut = action.type === 'ON_AUTH' &&
       state.users.viewer &&

@@ -4,7 +4,7 @@ import type { Theme } from '../themes/types';
 import React from 'react';
 import Text, { computeTextStyle } from './Text';
 import color from 'color';
-import isReactNative from '../../common/app/isReactNative';
+import isReactNative from '../../common/lib/isReactNative';
 
 // Universal text input component. By default, it looks like editable text.
 // For underline or the other effects, make a new component. Check Field.

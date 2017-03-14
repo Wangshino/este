@@ -3,13 +3,13 @@ import type { State, Todo } from '../../common/types';
 import Checkbox from './Checkbox';
 import Footer from './Footer';
 import React from 'react';
-import todosMessages from '../../common/todos/todosMessages';
+import todosMessages from '../../common/messages/todos';
 import { Box, Text, TextInput } from '../../common/components';
 import { FormattedMessage } from 'react-intl';
 import { Image, ScrollView, StyleSheet } from 'react-native';
 import { compose, isEmpty, prop, reverse, sortBy, values } from 'ramda';
 import { connect } from 'react-redux';
-import { toggleTodoCompleted } from '../../common/todos/actions';
+import { toggleTodoCompleted } from '../../common/modules/todos';
 
 type TodoItemProps = {
   todo: Todo,

@@ -1,10 +1,10 @@
 // @flow
 import React from 'react';
-import buttonsMessages from '../../common/app/buttonsMessages';
+import buttonsMessages from '../../common/messages/buttons';
 import { Button } from '../../common/components';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { signOut } from '../../common/auth/actions';
+import { signOut } from '../../common/modules/auth';
 
 type SignOutProps = { signOut: typeof signOut };
 type SignOutContext = { router: Object };

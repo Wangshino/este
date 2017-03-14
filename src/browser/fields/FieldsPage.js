@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
-import buttonsMessages from '../../common/app/buttonsMessages';
-import linksMessages from '../../common/app/linksMessages';
+import buttonsMessages from '../../common/messages/buttons';
+import linksMessages from '../../common/messages/links';
 import { Box, Button, Field, PageHeader } from '../../common/components';
 import { Checkbox, Form, Radio, Title } from '../components';
 import { FormattedMessage } from 'react-intl';

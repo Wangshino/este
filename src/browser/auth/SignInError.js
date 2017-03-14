@@ -1,8 +1,8 @@
 // @flow
 import type { State } from '../../common/types';
 import React from 'react';
-import errorMessages from '../../common/auth/errorMessages';
-import firebaseMessages from '../../common/auth/firebaseMessages';
+import errorMessages from '../../common/messages/error';
+import firebaseMessages from '../../common/messages/firebase';
 import { FormattedMessage } from 'react-intl';
 import { Message } from '../../common/components';
 import { connect } from 'react-redux';

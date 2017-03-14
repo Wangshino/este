@@ -1,7 +1,7 @@
 // @flow
 import OnlineUsers from './OnlineUsers';
 import React from 'react';
-import linksMessages from '../../common/app/linksMessages';
+import linksMessages from '../../common/messages/links';
 import { Box, PageHeader } from '../../common/components';
 import { Title } from '../components';
 

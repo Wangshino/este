@@ -113,7 +113,7 @@ React Native: [Getting Started](https://facebook.github.io/react-native/docs/get
 
 - set name in `package.json`
 - set locales, firebaseUrl, sentryUrl, etc. in `src/server/config.js`
-- change `src/common/app/favicons/original/favicon.png`, then `gulp favicon` and `gulp -p`
+- change `src/common/manifest/assets/original/favicon.png`, then `gulp favicon` and `gulp -p`
 - modify your FB app_id e.g. for [iOS](https://developers.facebook.com/docs/ios/getting-started/#configure-xcode-project)
 
 ## Links

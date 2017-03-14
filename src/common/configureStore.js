@@ -1,7 +1,7 @@
 // @flow
 import configureMiddleware from './configureMiddleware';
 import configureReducer from './configureReducer';
-import isReactNative from './app/isReactNative';
+import isReactNative from './lib/isReactNative';
 import { applyMiddleware, createStore, compose } from 'redux';
 import { autoRehydrate } from 'redux-persist';
 

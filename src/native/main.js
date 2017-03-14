@@ -44,7 +44,7 @@ persistStore(
   },
   () => {
     // Don't import appStarted action creator since it would break hot reload.
-    store.dispatch(({ type: 'APP_STARTED' }: Action));
+    store.dispatch(({ type: 'este/app/STARTED' }: Action));
   },
 );
 

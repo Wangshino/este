@@ -1,14 +1,14 @@
 // @flow
 import type { State } from '../../common/types';
 import React from 'react';
-import buttonsMessages from '../../common/app/buttonsMessages';
-import emailMessages from '../../common/auth/emailMessages';
+import buttonsMessages from '../../common/messages/buttons';
+import emailMessages from '../../common/messages/email';
 import { Box, Button, Heading, Text, TextInput } from '../../common/components';
 import { compose } from 'ramda';
 import { connect } from 'react-redux';
 import { fields } from '../../common/lib/redux-fields';
 import { injectIntl } from 'react-intl';
-import { resetPassword, signIn, signUp } from '../../common/auth/actions';
+import { resetPassword, signIn, signUp } from '../../common/modules/auth';
 
 const Buttons = props => (
   <Box flexDirection="row" justifyContent="space-between" {...props} />

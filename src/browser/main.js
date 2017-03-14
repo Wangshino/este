@@ -80,7 +80,7 @@ cookiePaths.forEach(([feature, props]) => {
 found.getRenderArgs(store, renderArgs => {
   const onRehydrate = () => {
     // Don't import appStarted action creator since it would break hot reload.
-    store.dispatch(({ type: 'APP_STARTED' }: Action));
+    store.dispatch(({ type: 'este/app/STARTED' }: Action));
 
     // gist.github.com/gaearon/06bd9e2223556cb0d841#file-naive-js
     if (!module.hot || typeof module.hot.accept !== 'function') return;

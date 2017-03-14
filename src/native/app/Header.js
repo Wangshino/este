@@ -5,7 +5,7 @@ import React from 'react';
 import color from 'color';
 import { Box, Button, Text } from '../../common/components';
 import { Platform, StyleSheet } from 'react-native';
-import { appShowMenu } from '../../common/app/actions';
+import { appShowMenu } from '../../common/modules/app';
 import { connect } from 'react-redux';
 
 type HeaderProps = {

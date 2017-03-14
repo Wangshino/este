@@ -7,9 +7,9 @@ import realFavicon from 'gulp-real-favicon';
 gulp.task('favicon-generate', done => {
   realFavicon.generateFavicon(
     {
-      masterPicture: './src/common/app/favicons/original/favicon.png',
-      dest: './src/common/app/favicons',
-      iconsPath: '/assets/favicons',
+      masterPicture: './src/common/manifest/assets/original/favicon.png',
+      dest: './src/common/manifest/assets',
+      iconsPath: '/assets/manifest',
       design: {
         ios: {
           pictureAspect: 'backgroundAndMargin',

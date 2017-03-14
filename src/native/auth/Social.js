@@ -2,11 +2,11 @@
 import type { State } from '../../common/types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import React from 'react';
-import buttonsMessages from '../../common/app/buttonsMessages';
+import buttonsMessages from '../../common/messages/buttons';
 import { Box } from '../../common/components';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { signIn } from '../../common/auth/actions';
+import { signIn } from '../../common/modules/auth';
 
 const SocialLoginButton = (
   {

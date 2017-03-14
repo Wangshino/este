@@ -1,6 +1,6 @@
 // @flow
 import type { Action } from '../../common/types';
-import isClient from '../../common/app/isClient';
+import isClient from '../../common/lib/isClient';
 
 // LRU (Least Recently Used) cached Firebase queries for the best UX.
 // Queries are lazily watched when a route is matched, but not unwatched when

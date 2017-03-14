@@ -10,10 +10,10 @@ import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/catch';
 import { combineEpics } from 'redux-observable';
-import { epics as appEpics } from './app/actions';
-import { epics as authEpics } from './auth/actions';
-import { epics as usersEpics } from './users/actions';
-import { epics as intlEpics } from './intl/actions';
+import { epics as appEpics } from './modules/app';
+import { epics as authEpics } from './modules/auth';
+import { epics as usersEpics } from './modules/users';
+import { epics as intlEpics } from './modules/intl';
 
 const epics = [...appEpics, ...authEpics, ...usersEpics, ...intlEpics];
 

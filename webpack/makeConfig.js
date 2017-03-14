@@ -179,8 +179,8 @@ const makeConfig = options => {
           new CopyWebpackPlugin(
             [
               {
-                from: './src/common/app/favicons/',
-                to: 'favicons',
+                from: './src/common/manifest/assets/',
+                to: 'manifest',
               },
             ],
             {

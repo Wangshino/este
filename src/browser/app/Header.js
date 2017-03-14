@@ -1,7 +1,7 @@
 // @flow
 import type { State, User } from '../../common/types';
 import React from 'react';
-import linksMessages from '../../common/app/linksMessages';
+import linksMessages from '../../common/messages/links';
 import { Box } from '../../common/components';
 import { FormattedMessage } from 'react-intl';
 import { Link } from '../components';

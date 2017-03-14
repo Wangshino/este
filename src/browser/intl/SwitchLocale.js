@@ -4,7 +4,7 @@ import React from 'react';
 import { Box, Button } from '../../common/components';
 import { compose } from 'ramda';
 import { connect } from 'react-redux';
-import { setCurrentLocale } from '../../common/intl/actions';
+import { setCurrentLocale } from '../../common/modules/intl';
 
 type SwitchLocaleProps = {
   currentLocale: string,

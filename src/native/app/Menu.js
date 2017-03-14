@@ -1,12 +1,12 @@
 // @flow
 import type { State, User } from '../../common/types';
 import React from 'react';
-import linksMessages from '../../common/app/linksMessages';
+import linksMessages from '../../common/messages/links';
 import { Box } from '../../common/components';
 import { FormattedMessage } from 'react-intl';
 import { Link } from '../components';
 import { ScrollView } from 'react-native';
-import { appShowMenu } from '../../common/app/actions';
+import { appShowMenu } from '../../common/modules/app';
 import { connect } from 'react-redux';
 
 let MenuLink = ({ appShowMenu, message, ...props }) => (

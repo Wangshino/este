@@ -2,8 +2,8 @@
 import configureDeps from './configureDeps';
 import configureEpics from './configureEpics';
 import createLoggerMiddleware from 'redux-logger';
-import isClient from './app/isClient';
-import isReactNative from './app/isReactNative';
+import isClient from './lib/isClient';
+import isReactNative from './lib/isReactNative';
 import { createEpicMiddleware } from 'redux-observable';
 
 // Like redux-thunk, but with just one argument for dependencies.

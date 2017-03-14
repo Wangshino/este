@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
-import newTodoMessages from '../../common/todos/newTodoMessages';
+import newTodoMessages from '../../common/messages/todos';
 import { Box, TextInput } from '../../common/components';
-import { addTodo } from '../../common/todos/actions';
+import { addTodo } from '../../common/modules/todos';
 import { compose } from 'ramda';
 import { connect } from 'react-redux';
 import { fields } from '../../common/lib/redux-fields';

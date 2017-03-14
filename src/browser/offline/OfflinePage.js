@@ -1,7 +1,7 @@
 // @flow
 import type { State } from '../../common/types';
 import React from 'react';
-import linksMessages from '../../common/app/linksMessages';
+import linksMessages from '../../common/messages/links';
 import { connect } from 'react-redux';
 import { Box, PageHeader, Text } from '../../common/components';
 import { Title } from '../components';

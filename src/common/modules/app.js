@@ -1,9 +1,5 @@
 // @flow
-import type { Action, Deps, AppState } from '../types';
-import isReactNative from '../lib/isReactNative';
-import { Actions as FarceActions } from 'farce';
-import { Observable } from 'rxjs/Observable';
-import { onAuth, signInDone, signInFail } from '../modules/auth';
+import type { Action, AppState } from '../types';
 
 const ERROR = 'este/app/ERROR';
 const STARTED = 'este/app/STARTED';
@@ -45,66 +41,6 @@ export const setTheme = (theme: string): Action => ({
   payload: { theme },
 });
 
-const appStartedEpic = (action$: any, deps: Deps) => {
-  const { firebase, firebaseAuth, getState } = deps;
-
-  const appOnline$ = Observable.create(observer => {
-    const onValue = snap => {
-      const online = snap.val();
-      if (online === getState().app.online) return;
-      observer.next(appOnline(online));
-    };
-    firebase.child('.info/connected').on('value', onValue);
-    return () => {
-      firebase.child('.info/connected').off('value', onValue);
-    };
-  });
-
-  const maybeUpdatePathnameOnAuthChange = firebaseUser => {
-    const { pathname } = getState().found.match.location;
-    const isSignIn = firebaseUser && pathname === '/signin';
-    return FarceActions.replace(isSignIn ? '/' : pathname);
-  };
-
-  // firebase.google.com/docs/reference/js/firebase.auth.Auth#onAuthStateChanged
-  const onAuth$ = Observable.create(observer => {
-    const unsubscribe = firebaseAuth().onAuthStateChanged(firebaseUser => {
-      observer.next(onAuth(firebaseUser));
-      if (!isReactNative) {
-        observer.next(maybeUpdatePathnameOnAuthChange(firebaseUser));
-      }
-    });
-    return unsubscribe;
-  });
-
-  const signInAfterRedirect$ = Observable.create(observer => {
-    let unsubscribed = false;
-    firebaseAuth()
-      .getRedirectResult()
-      .then(({ user: firebaseUser }) => {
-        if (unsubscribed || !firebaseUser) return;
-        observer.next(signInDone(firebaseUser));
-      })
-      .catch(error => {
-        if (unsubscribed) return;
-        observer.error(signInFail(error));
-      });
-    return () => {
-      unsubscribed = true;
-    };
-  });
-
-  const streams: Array<any> = [appOnline$, onAuth$];
-
-  if (process.env.IS_BROWSER) {
-    streams.push(signInAfterRedirect$);
-  }
-
-  return action$
-    .filter((action: Action) => action.type === STARTED)
-    .mergeMap(() => Observable.merge(...streams));
-};
-
 const reducer = (state: AppState = initialState, action: Action): AppState => {
   // Map all app errors into state.app.error.
   // In React Native, we show errors in one nicely animated unobtrusive alert.
@@ -141,5 +77,3 @@ const reducer = (state: AppState = initialState, action: Action): AppState => {
 };
 
 export default reducer;
-
-export const epics = [appStartedEpic];

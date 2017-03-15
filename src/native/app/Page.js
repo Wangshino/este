@@ -3,7 +3,8 @@ import Alert from './Alert';
 import Header from './Header';
 import React from 'react';
 import linksMessages from '../../common/messages/links';
-import { Box, Match } from '../../common/components';
+import Match from '../../common/components/Match';
+import { Box } from '../../common/components';
 import { injectIntl } from 'react-intl';
 
 type PageProps = {

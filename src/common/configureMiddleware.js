@@ -1,10 +1,9 @@
 // @flow
 import configureDeps from './configureDeps';
-import configureEpics from './configureEpics';
+// import configureEpics from './configureEpics';
 import createLoggerMiddleware from 'redux-logger';
 import isClient from './lib/isClient';
 import isReactNative from './lib/isReactNative';
-import { createEpicMiddleware } from 'redux-observable';
 
 // Like redux-thunk, but with just one argument for dependencies.
 const injectMiddleware = deps =>
@@ -23,12 +22,12 @@ const configureMiddleware = (
   platformMiddleware: any,
 ) => {
   const deps = configureDeps(initialState, platformDeps);
-  const rootEpic = configureEpics(deps);
-  const epicMiddleware = createEpicMiddleware(rootEpic);
+  // const rootEpic = configureEpics(deps);
+  // const epicMiddleware = createEpicMiddleware(rootEpic);
 
   const middleware = [
     injectMiddleware(deps),
-    epicMiddleware,
+    // epicMiddleware,
     ...platformMiddleware,
   ];
 
@@ -44,17 +43,17 @@ const configureMiddleware = (
 
   if (module.hot && typeof module.hot.accept === 'function') {
     if (isReactNative) {
-      module.hot.accept(() => {
-        const configureEpics = require('./configureEpics').default;
+      // module.hot.accept(() => {
+        // const configureEpics = require('./configureEpics').default;
 
-        epicMiddleware.replaceEpic(configureEpics(deps));
-      });
+        // epicMiddleware.replaceEpic(configureEpics(deps));
+      // });
     } else {
-      module.hot.accept('./configureEpics', () => {
-        const configureEpics = require('./configureEpics').default;
+      // module.hot.accept('./configureEpics', () => {
+        // const configureEpics = require('./configureEpics').default;
 
-        epicMiddleware.replaceEpic(configureEpics(deps));
-      });
+        // epicMiddleware.replaceEpic(configureEpics(deps));
+      // });
     }
   }
 

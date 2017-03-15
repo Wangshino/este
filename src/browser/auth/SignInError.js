@@ -2,13 +2,12 @@
 import type { State } from '../../common/types';
 import React from 'react';
 import errorMessages from '../../common/messages/error';
-import firebaseMessages from '../../common/messages/firebase';
 import { FormattedMessage } from 'react-intl';
 import { Message } from '../../common/components';
 import { connect } from 'react-redux';
 
 const getMessage = error =>
-  errorMessages[error.name] || firebaseMessages[error.name] || error.toString();
+  errorMessages[error.name] || error.toString();
 
 const SignInError = ({ error }) => {
   if (!error) return null;

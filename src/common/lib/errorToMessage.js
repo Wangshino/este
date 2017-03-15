@@ -1,12 +1,12 @@
 // @flow
 import authErrorMessages from '../messages/error';
-import firebaseMessages from '../messages/firebase';
 import { ValidationError } from '../lib/validation';
 
-const isInnocuousError = error => error.code === 'auth/popup-closed-by-user'; // Firebase stuff.
+// TODO: Errors to ignore
+const isInnocuousError = error => error.code === 0;
 
 const validationErrorToMessage = error => ({
-  message: authErrorMessages[error.name] || firebaseMessages[error.name],
+  message: authErrorMessages[error.name], // || networkErrorMessages[error.name],
   values: error.params,
 });
 
@@ -25,9 +25,10 @@ const errorToMessage = (error: Object) => {
     return validationErrorToMessage(error);
   }
 
-  if (firebaseMessages[error.code]) {
-    return { message: firebaseMessages[error.code] };
-  }
+  // TODO: network error messages
+  // if (networkErrorMessages[error.code]) {
+  //   return { message: networkErrorMessages[error.code] };
+  // }
 
   // Return null for unknown error, so it will be reported.
   return null;

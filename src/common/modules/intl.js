@@ -1,7 +1,6 @@
 // @flow
 import type { Action, IntlState } from '../types';
-import { Observable } from 'rxjs/Observable';
-import { loadLocale } from '../../browser/_intl';
+// import { loadLocale } from '../../browser/_intl';
 
 const LOAD_LOCALE = 'este/intl/LOAD_LOCALE';
 const SET_LOCALE = 'este/intl/SET_LOCALE';
@@ -23,13 +22,6 @@ export const applyCurrentLocale = (locale: string, messages: Object): Action => 
   type: SET_LOCALE,
   payload: { locale, messages },
 });
-
-const applyLocale = (action$: any) =>
-  action$.ofType(LOAD_LOCALE)
-    .mergeMap(({ payload: { locale } }) =>
-      // $FlowFixMe call of method `from` property `@@iterator` of $Iterable. Property not found in.
-      Observable.from(loadLocale(locale))
-        .map(messages => applyCurrentLocale(locale, messages)));
 
 const reducer = (
   state: IntlState = initialState,
@@ -57,7 +49,3 @@ const reducer = (
 };
 
 export default reducer;
-
-export const epics = [
-  applyLocale,
-];

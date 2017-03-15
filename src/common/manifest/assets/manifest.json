@@ -1,5 +1,11 @@
 {
     "name": "este",
+    "short_name": "este",
+    "start_url": ".",
+    "background_color": "#FFFFFF",
+    "theme_color": "#FFFFFF",
+    "display": "standalone",
+    "orientation": "any",
     "icons": [
         {
             "src": "/assets/manifest/android-chrome-36x36.png",
@@ -46,7 +52,5 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff"
+    ]
 }

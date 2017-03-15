@@ -2,9 +2,7 @@
 import type { State } from '../../common/types';
 import HttpError from 'found/lib/HttpError';
 import React from 'react';
-import queryFirebase from './queryFirebase';
 import { makeRouteConfig, Route } from 'found/lib/jsx';
-import { onUsersPresence } from '../../common/modules/users';
 
 // Pages
 import App from './App';
@@ -17,7 +15,6 @@ import ProfilePage from '../me/ProfilePage';
 import SettingsPage from '../me/SettingsPage';
 import SignInPage from '../auth/SignInPage';
 import TodosPage from '../todos/TodosPage';
-import UsersPage from '../users/UsersPage';
 
 // Custom route to require viewer aka authenticated user.
 const AuthorizedRoute = () => {};
@@ -46,14 +43,6 @@ const routeConfig = makeRouteConfig(
     <Route path="offline" Component={OfflinePage} />
     <Route path="signin" Component={SignInPage} />
     <Route path="todos" Component={TodosPage} />
-    <Route
-      path="users"
-      Component={UsersPage}
-      getData={queryFirebase(
-        ref => [ref.child('users-presence'), 'value', onUsersPresence],
-        // ref => [ref.child('what-ever').limitToFirst(1), 'value', onWhatEver],
-      )}
-    />
   </Route>,
 );
 

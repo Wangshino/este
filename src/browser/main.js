@@ -4,10 +4,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './app/Root';
 import configureFound from './configureFound';
-import configureReporting from '../common/configureReporting';
+// import configureReporting from '../common/configureReporting';
 import configureStorage from '../common/configureStorage';
 import configureStore from '../common/configureStore';
-import localforage from 'localforage';
 import uuid from 'uuid';
 import cookie from 'js-cookie';
 import { persistStore, createTransform } from 'redux-persist';
@@ -15,11 +14,11 @@ import { pick } from 'ramda';
 
 const initialState = window.__INITIAL_STATE__; // eslint-disable-line no-underscore-dangle
 
-const reportingMiddleware = configureReporting({
-  appVersion: initialState.config.appVersion,
-  sentryUrl: initialState.config.sentryUrl,
-  unhandledRejection: fn => window.addEventListener('unhandledrejection', fn),
-});
+// const reportingMiddleware = configureReporting({/
+//   appVersion: initialState.config.appVersion,
+//   sentryUrl: initialState.config.sentryUrl,
+//   unhandledRejection: fn => window.addEventListener('unhandledrejection', fn),
+// });
 
 // Why Found instead of React Router? Because Found is more powerful.
 // medium.com/@taion/react-routing-and-data-fetching-ec519428135c
@@ -77,7 +76,7 @@ const main = (locale: string, messages: Object) => {
     initialState,
     platformDeps: { uuid },
     platformReducers: { found: found.reducer },
-    platformMiddleware: [reportingMiddleware],
+    platformMiddleware: [], // [reportingMiddleware],
     platformStoreEnhancers: found.storeEnhancers,
   });
 
@@ -102,14 +101,16 @@ const main = (locale: string, messages: Object) => {
     };
 
     const afterInitialRender = () => {
-      persistStore(
-        store,
-        {
-          ...configureStorage(initialState.config.appName, transforms),
-          storage: localforage,
-        },
-        onRehydrate,
-      );
+      // $FlowFixMe
+      System.import('localforage').then(localforage =>
+        persistStore(
+          store,
+          {
+            ...configureStorage(initialState.config.appName, transforms),
+            storage: localforage,
+          },
+          onRehydrate,
+        ));
     };
 
     ReactDOM.render(

@@ -81,12 +81,6 @@ const configureReporting = (options: any) => {
       'bmi_SafeAddOnload',
       'EBCallBackMessageReceived',
       'conduitPage',
-      // Firebase
-      'Access is denied.',
-      'An internal error has occurred.',
-      'PERMISSION_DENIED: Permission denied',
-      'A network error (such as timeout, interrupted connection or unreachable host) has occurred',
-      '__gCrWeb.autofill.extractForms',
     ],
     ignoreUrls: [
       // Facebook flakiness

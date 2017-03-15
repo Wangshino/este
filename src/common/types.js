@@ -106,11 +106,11 @@ export type Action =
   | { type: 'este/auth/ON_AUTH', payload: { firebaseUser: ?Object } }
   | { type: 'este/auth/RESET_PASSWORD', payload: { email: string } }
   | { type: 'este/auth/SIGN_IN', payload: { providerName: string, options?: Object } }
-  | { type: 'este/auth/SIGN_IN_DONE', payload: { user: ?User } }
+  | { type: 'este/auth/SIGN_IN_DONE' }
   | { type: 'este/auth/SIGN_IN_FAIL', payload: { error: Error } }
   | { type: 'este/auth/SIGN_OUT' }
   | { type: 'este/auth/SIGN_UP', payload: { providerName: string, options?: Object } }
-  | { type: 'este/auth/SIGN_UP_DONE', payload: { user: ?User } }
+  | { type: 'este/auth/SIGN_UP_DONE' }
   | { type: 'este/auth/SIGN_UP_FAIL', payload: { error: Error } }
   | { type: 'este/intl/SET_LOCALE', payload: { locale: string, messages?: Object } }
   | { type: 'este/intl/LOAD_LOCALE', payload: { locale: string } }

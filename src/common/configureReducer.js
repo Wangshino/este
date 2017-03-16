@@ -15,7 +15,7 @@ const resetStateOnSignOutReducer = (reducer, initialState: State) =>
   (state: State, action: Action) => {
     const userWasSignedOut = action.type === 'ON_AUTH' &&
       state.users.viewer &&
-      !action.payload.firebaseUser;
+      !action.payload.user;
     if (!userWasSignedOut) {
       return reducer(state, action);
     }

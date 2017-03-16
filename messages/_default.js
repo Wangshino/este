@@ -102,27 +102,6 @@ export default {
   "auth.social.facebookSignIn":
     "Login with Facebook",
 
-  "firebase.error.auth/network-request-failed":
-    "No internet connection.",
-
-  "firebase.error.auth/too-many-requests":
-    "Too many requests. Try it later, please.",
-
-  "firebase.error.auth/user-token-expired":
-    "Your credential has expired. Please sign in.",
-
-  "firebase.error.EMAIL_TAKEN":
-    "The new user account cannot be created because the specified email address is already in use.",
-
-  "firebase.error.INVALID_EMAIL":
-    "The specified email is not a valid email.",
-
-  "firebase.error.INVALID_PASSWORD":
-    "The specified user account password is incorrect.",
-
-  "firebase.error.INVALID_USER":
-    "The specified user account does not exist.",
-
   "footer.madeByHtml":
     "Made with love by",
 

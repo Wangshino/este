@@ -193,7 +193,7 @@ const makeConfig = options => {
       // hints: process.env.NODE_ENV === 'production' ? 'warning' : false,
     },
     resolve: {
-      extensions: ['.js'], // .json is ommited to ignore ./firebase.json
+      extensions: ['.js', '.json'],
       modules: [constants.SRC_DIR, 'node_modules'],
       alias: {
         react$: require.resolve(path.join(constants.NODE_MODULES_DIR, 'react')),

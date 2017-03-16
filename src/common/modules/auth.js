@@ -16,9 +16,9 @@ const initialState = {
   error: null,
 };
 
-export const onAuth = (firebaseUser: ?Object): Action => ({
+export const onAuth = (user: ?Object): Action => ({
   type: ON_AUTH,
-  payload: { firebaseUser },
+  payload: { user },
 });
 
 export const resetPassword = (email: string): Action => ({

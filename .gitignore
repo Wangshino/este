@@ -53,10 +53,7 @@ fastlane/Preview.html
 fastlane/screenshots
 
 # Este
-.firebaserc
 bundle-stats.json
-firebase-debug.log
-firebase/rules.json
 src/common/config.json
 src/native/initialState.js
 webpack-assets.json

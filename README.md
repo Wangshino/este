@@ -30,10 +30,6 @@
 - stateless functional UI with dynamic typed styles
 - flowtype FTW
 - vanilla hot reloading makes everything hot reloadable
-- [Firebase](https://firebase.google.com/) integration ([este.firebaseapp.com](https://este.firebaseapp.com))
-  - email and facebook login
-  - declarative queryFirebase higher order component for Firebase imperative API
-  - users presence
 
 ## Libraries
 
@@ -59,8 +55,6 @@
 
 - [Facebook SDK for iOS](https://developers.facebook.com/docs/ios/) In order to make Facebook login work on iOS
 - [Facebook SDK for Android](https://developers.facebook.com/docs/android/) In order to make Facebook login work on Android
-- [firebase-cli](https://firebase.google.com/docs/cli/) `npm install -g firebase-tools`
-- [firebase-bolt](https://github.com/firebase/bolt) `npm install -g firebase-bolt`
 - [react-native-cli](http://facebook.github.io/react-native/docs/getting-started.html) `npm install -g react-native-cli`
 
 If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) to manage them.
@@ -103,16 +97,12 @@ React Native: [Getting Started](https://facebook.github.io/react-native/docs/get
 - `gulp build -p` build app for production
 - `npm test` run all checks and tests
 - `node src/server` start app, remember to set NODE_ENV
-- `gulp to-html` render app to HTML for static hosting like [Firebase](https://www.firebase.com/features.html#features-hosting)
-- `gulp deploy-now` deploy to [Now](https://zeit.co/now/)
-- `gulp deploy-heroku` deploy to [Heroku](https://www.heroku.com/)
-- `gulp deploy-firebase` deploy to [Firebase](https://firebase.google.com/)
-- `gulp deploy-firebase-database` deploy Firebase database only
+- `gulp to-html` render app to HTML for static hosting like
 
 ## Customize Este App
 
 - set name in `package.json`
-- set locales, firebaseUrl, sentryUrl, etc. in `src/server/config.js`
+- set locales, sentryUrl, etc. in `src/server/config.js`
 - change `src/common/manifest/assets/original/favicon.png`, then `gulp favicon` and `gulp -p`
 - modify your FB app_id e.g. for [iOS](https://developers.facebook.com/docs/ios/getting-started/#configure-xcode-project)
 

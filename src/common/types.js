@@ -7,9 +7,6 @@
 
 export type Deps = {
   FBSDK: any,
-  firebase: any,
-  firebaseAuth: Function,
-  firebaseDatabase: any,
   getState: () => Object,
   getUid: () => string,
   now: () => number,
@@ -55,7 +52,6 @@ export type AuthState = {
 export type ConfigState = {
   appName: string,
   appVersion: string,
-  firebase: ?Object,
   sentryUrl: string,
 };
 
@@ -103,7 +99,7 @@ export type Action =
   | { type: 'este/app/SHOW_MENU', payload: { menuShown: boolean } }
   | { type: 'este/app/STARTED' }
   | { type: 'este/app/TOGGLE_BASELINE' }
-  | { type: 'este/auth/ON_AUTH', payload: { firebaseUser: ?Object } }
+  | { type: 'este/auth/ON_AUTH', payload: { user: ?Object } }
   | { type: 'este/auth/RESET_PASSWORD', payload: { email: string } }
   | { type: 'este/auth/SIGN_IN', payload: { providerName: string, options?: Object } }
   | { type: 'este/auth/SIGN_IN_DONE' }
@@ -121,5 +117,4 @@ export type Action =
   | { type: 'este/todos/DELETE', payload: { id: string } }
   | { type: 'este/todos/TOGGLE_COMPLETED', payload: { todo: Todo } }
   | { type: 'este/users/ON_PRESENCE', payload: { presence: Object } }
-  | { type: 'este/users/SAVE_USER_DONE' }
-  | { type: 'QUERY_FIREBASE', payload: { ref: string } };
+  | { type: 'este/users/SAVE_USER_DONE' };

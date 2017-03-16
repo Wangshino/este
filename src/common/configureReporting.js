@@ -49,7 +49,7 @@ const createReportingMiddleware = () => {
         if (action.type === 'APP_ERROR') {
           captureException(action.payload.error);
         } else if (action.type === 'ON_AUTH') {
-          setRavenUserContext(action.payload.firebaseUser);
+          setRavenUserContext(action.payload.user);
         }
         setExtraContext(store.getState(), action);
         return next(action);

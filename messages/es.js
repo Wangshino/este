@@ -102,27 +102,6 @@ export default {
   "auth.social.facebookSignIn":
     "Iniciar sesión en Facebook",
 
-  "firebase.error.auth/network-request-failed":
-    "La nueva cuenta de usuario no puede ser creada porque la dirección de correo electrónico especificada ya se encuentra en uso.",
-
-  "firebase.error.auth/too-many-requests":
-    "Too many requests. Try it later, please.",
-
-  "firebase.error.auth/user-token-expired":
-    "Your credential has expired. Please sign in.",
-
-  "firebase.error.EMAIL_TAKEN":
-    "The new user account cannot be created because the specified email address is already in use.",
-
-  "firebase.error.INVALID_EMAIL":
-    "La dirección de correo especificada no es una dirección de correo válida.",
-
-  "firebase.error.INVALID_PASSWORD":
-    "La contraseña de la cuenta de usuario especificada no es válida.",
-
-  "firebase.error.INVALID_USER":
-    "La cuenta de usuario especificada no existe.",
-
   "footer.madeByHtml":
     "Hecho por",
 

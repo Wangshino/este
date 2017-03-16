@@ -15,10 +15,6 @@ const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(
   webpackIsomorphicAssets,
 );
 
-// github.com/facebookincubator/create-react-app/issues/343#issuecomment-237241875
-// You may want 'cheap-module-source-map' instead if you prefer source maps.
-const devtools = 'eval';
-
 const loaders = {
   css: '',
 };
@@ -29,28 +25,27 @@ const serverIp = config.remoteHotReload
 
 // $FlowFixMe
 const makeConfig = options => {
-  const {
-    isDevelopment,
-  } = options;
-
+  const { isDevelopment } = options;
   const stylesLoaders = Object.keys(loaders).map(ext => {
     const prefix = 'css-loader!postcss-loader';
     const extLoaders = prefix + loaders[ext];
     const loader = isDevelopment
       ? `style-loader!${extLoaders}`
       : ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: extLoaders,
+          fallback: 'style-loader',
+          use: extLoaders,
         });
     return {
-      loader,
       test: new RegExp(`\\.(${ext})$`),
+      use: loader,
     };
   });
 
-  const config = {
+  return {
     cache: isDevelopment,
-    devtool: isDevelopment ? devtools : '',
+    devtool: isDevelopment
+      ? config.developmentSourceMap
+      : config.productionSourceMap,
     entry: {
       app: isDevelopment
         ? [
@@ -62,52 +57,53 @@ const makeConfig = options => {
     module: {
       noParse: [
         // https://github.com/localForage/localForage/issues/617
-        new RegExp('localforage.js'),
+        /localforage\.js/,
       ],
       rules: [
         {
-          loader: 'url-loader',
           test: /\.(gif|jpg|png|svg)(\?.*)?$/,
-          options: {
-            limit: 10000,
+          use: {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+            },
           },
         },
         {
-          loader: 'url-loader',
           test: /favicon\.ico$/,
-          options: {
-            limit: 1,
+          use: {
+            loader: 'url-loader',
+            options: {
+              limit: 1,
+            },
           },
         },
         {
-          loader: 'url-loader',
           test: /\.(ttf|eot|woff|woff2)(\?.*)?$/,
-          options: {
-            limit: 100000,
+          use: {
+            loader: 'url-loader',
+            options: {
+              limit: 100000,
+            },
           },
         },
         {
-          loader: 'babel-loader',
           test: /\.js$/,
           exclude: constants.NODE_MODULES_DIR,
-          options: {
-            cacheDirectory: true,
-            presets: [['env', { modules: false }], 'react', 'stage-1'],
-            plugins: [
-              'ramda',
-              'lodash',
-              [
-                'transform-runtime',
-                {
-                  helpers: false,
-                  polyfill: false,
-                  regenerator: false,
-                },
+          use: {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+              presets: [['env', { modules: false }], 'react', 'stage-1'],
+              plugins: [
+                'ramda',
+                'lodash',
+                // ['inferno', { imports: true }],
               ],
-            ],
-            env: {
-              production: {
-                plugins: ['transform-react-constant-elements'],
+              env: {
+                production: {
+                  plugins: ['transform-react-constant-elements'],
+                },
               },
             },
           },
@@ -204,8 +200,6 @@ const makeConfig = options => {
       },
     },
   };
-
-  return config;
 };
 
 export default makeConfig;

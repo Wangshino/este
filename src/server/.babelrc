@@ -3,11 +3,6 @@
   "plugins": [
     "ramda",
     "lodash",
-    ["transform-runtime", {
-      "helpers": false,
-      "polyfill": false,
-      "regenerator": false,
-    }],
   ],
   "env": {
     "production": {

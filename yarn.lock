@@ -507,14 +507,13 @@ babel-jest@^19.0.0:
     babel-plugin-istanbul "^4.0.0"
     babel-preset-jest "^19.0.0"
 
-babel-loader@^6.2.0:
-  version "6.3.2"
-  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-6.3.2.tgz#18de4566385578c1b4f8ffe6cbc668f5e2a5ef03"
+babel-loader@^7.0.0:
+  version "7.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-7.0.0-beta.1.tgz#1318888dfcbbd5f05750ba2d72c744cc07815ce2"
   dependencies:
     find-cache-dir "^0.1.1"
-    loader-utils "^0.2.16"
+    loader-utils "^1.0.2"
     mkdirp "^0.5.1"
-    object-assign "^4.0.1"
 
 babel-messages@^6.23.0:
   version "6.23.0"
@@ -3069,6 +3068,12 @@ fela-plugin-placeholder-prefixer@^4.2.6:
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/fela-plugin-placeholder-prefixer/-/fela-plugin-placeholder-prefixer-4.2.6.tgz#3ea86c1c7878a53f9ace8d002f8e74184c032e39"
 
+fela-plugin-prefixer@^4.2.6:
+  version "4.2.6"
+  resolved "https://registry.yarnpkg.com/fela-plugin-prefixer/-/fela-plugin-prefixer-4.2.6.tgz#7113de659358f4bd45898ba8b1ba130d9157f153"
+  dependencies:
+    inline-style-prefixer "^3.0.0"
+
 fela-plugin-unit@^4.2.6:
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/fela-plugin-unit/-/fela-plugin-unit-4.2.6.tgz#cf8ec827d4e0b46653bd3a529740a09fc7116367"
@@ -5100,7 +5105,7 @@ lodash@^3.5.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.6, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
+lodash@^4.0.0, lodash@^4.12.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.6, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -6543,6 +6548,13 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^0.2.2"
 
+react-ssr-optimization@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/react-ssr-optimization/-/react-ssr-optimization-0.0.7.tgz#ae2a1b7127b32786a57f4e6406834afe8c2345d3"
+  dependencies:
+    lodash "^4.12.0"
+    lru-cache "^4.0.1"
+
 react-static-container@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-static-container/-/react-static-container-1.0.1.tgz#694c0dd68a896b879519afb548399cc1989c9ab0"
@@ -6917,7 +6929,7 @@ resolve@^1.1.6, resolve@^1.1.7, resolve@^1.2.0:
   dependencies:
     path-parse "^1.0.5"
 
-response-time@~2.3.1:
+response-time@^2.3.2, response-time@~2.3.1:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/response-time/-/response-time-2.3.2.tgz#ffa71bab952d62f7c1d49b7434355fbc68dffc5a"
   dependencies:

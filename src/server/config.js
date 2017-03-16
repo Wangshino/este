@@ -32,6 +32,11 @@ nconf.defaults({
   // How do we access a website running on localhost from mobile browser?
   // stackoverflow.com/questions/3132105
   remoteHotReload: true,
+  // TODO: enable cheap-module-eval-source-map when the following are resolved:
+  // https://github.com/webpack/webpack/issues/3165
+  // https://github.com/webpack/webpack/issues/4423
+  developmentSourceMap: 'eval-source-map',
+  productionSourceMap: 'hidden-source-map',
   sentryUrl: 'https://f297cec9c9654088b8ccf1ea9136c458@app.getsentry.com/77415',
 });
 

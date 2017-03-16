@@ -11,8 +11,10 @@ const polyfillLocales = require('./intl/polyfillLocales');
 const rootDir = require('path').resolve(__dirname, '..', '..');
 
 if (!process.env.NODE_ENV) {
-  const message = 'Environment variable NODE_ENV must be set to development or production.';
+  const message = 'Environment variable NODE_ENV must be set to "development" or "production".';
   throw new Error(message);
+} else if (process.env.NODE_ENV === 'production') {
+  require('./cache');
 }
 
 polyfillLocales(global, config.locales);
